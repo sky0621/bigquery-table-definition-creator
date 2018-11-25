@@ -7,11 +7,6 @@ import com.github.sky0621.bigquerytabledefinitioncreator.config.ConfigManager;
  */
 public class Main {
 
-    // [機能]
-    // 1.Excel解析⇒VMファイル生成
-    // 2.VMファイル⇒Beanクラス生成
-    // 3.VM+Bean by Velocity⇒メール文例出力
-
     public static void main(String... args) {
         try {
             Argument argument = new Argument(args);

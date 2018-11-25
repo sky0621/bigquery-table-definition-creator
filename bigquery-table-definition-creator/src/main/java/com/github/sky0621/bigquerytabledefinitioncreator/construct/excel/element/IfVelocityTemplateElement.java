@@ -1,12 +1,12 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element;
 
-import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplate;
+import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplateParameter;
 
 /**
  * FIXME: JavaDoc
  */
 public interface IfVelocityTemplateElement {
 
-    void doProcess(VelocityTemplate velocityTemplate);
+    void doProcess(VelocityTemplateParameter velocityTemplateParameter);
 
 }

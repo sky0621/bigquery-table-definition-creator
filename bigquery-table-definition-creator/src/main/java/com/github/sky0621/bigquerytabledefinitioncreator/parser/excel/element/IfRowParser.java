@@ -1,6 +1,6 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.parser.excel.element;
 
-import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplate;
+import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplateParameter;
 import org.apache.poi.ss.usermodel.Row;
 
 /**
@@ -8,5 +8,5 @@ import org.apache.poi.ss.usermodel.Row;
  */
 public interface IfRowParser {
 
-    boolean parse(Row row, VelocityTemplate velocityTemplate);
+    boolean parse(Row row, VelocityTemplateParameter velocityTemplateParameter);
 }

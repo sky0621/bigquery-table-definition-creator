@@ -1,8 +1,8 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.parser.excel.element;
 
-import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplate;
-import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element.DisplaySpecification;
-import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element.SeparateOutSpecification;
+import com.github.sky0621.bigquerytabledefinitioncreator.config.ConfigManager;
+import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplateParameter;
+import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element.ColumnDef;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 
@@ -13,19 +13,21 @@ import java.util.Optional;
  */
 public class SheetParser {
 
-    public Optional<VelocityTemplate> parse(Sheet sheet) {
+    public Optional<VelocityTemplateParameter> parse(Sheet sheet) {
 
         // Oops...
-        DisplaySpecification.setDisplaySpecificationParseOn(false);
-        SeparateOutSpecification.setSeparateOutSpecificationParseOn(false);
+        ColumnDef.setDisplaySpecificationParseOn(false);
 
-        VelocityTemplate velocityTemplate = new VelocityTemplate();
+        VelocityTemplateParameter velocityTemplateParameter = new VelocityTemplateParameter();
+        velocityTemplateParameter.setPackageName(ConfigManager.configGenTableDefClz().getPackageName());
+        velocityTemplateParameter.setSuperClassName(ConfigManager.configGenTableDefClz().getSuperClassName());
+
         for (Row row : sheet) {
-            if (new RowParser().parse(row, velocityTemplate)) {
+            if (new RowParser().parse(row, velocityTemplateParameter)) {
                 continue;
             }
         }
-        return Optional.ofNullable(velocityTemplate);
+        return Optional.ofNullable(velocityTemplateParameter);
     }
 
 }

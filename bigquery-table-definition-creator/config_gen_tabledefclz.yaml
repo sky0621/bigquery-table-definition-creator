@@ -1,0 +1,31 @@
+# 入出力
+io:
+  inputParameter: "/sky0621/bigquery-table-definition-creator/bigquery-table-definition-creator/sample/tabledefclz/input/parameter/"
+  inputTemplate: "/sky0621/bigquery-table-definition-creator/bigquery-table-definition-creator/sample/tabledefclz/input/template/sample.vm"
+  outputDir: "/sky0621/bigquery-table-definition-creator/bigquery-table-definition-creator/sample/template"
+#
+packageName: "com.example.sky0621.abc"
+superClassName: "SuperClass"
+
+table:
+  # テーブル定義（＝クラスコメント・クラス名）のある行
+  tableDefLineIndex: 0
+  # クラスコメントのある列
+  classCommentColIndex: 0 # A列
+  # クラス名のある列
+  classNameColIndex: 7  # H列
+
+column:
+  # カラムの解析をはじめる行
+  parseStartLineIndex: 8
+  # BigQueryテーブル上のカラム名のある列
+  bigqueryColumnNameColIndex: 2 # C列
+  # BigQueryテーブル上のカラムタイプのある列
+  bigqueryColumnTypeColIndex: 3 # D列
+  # BigQueryテーブル上のカラムモードのある列
+  bigqueryColumnModeColIndex: 4 # E列
+  # BigQueryテーブル上のカラム日本語名のある列
+  bigqueryJapaneseNameColIndex: 5 # F列
+  # BigQueryテーブル上のカラム日本語コメントのある列
+  bigqueryJapaneseCommentColIndex: 6 # G列
+

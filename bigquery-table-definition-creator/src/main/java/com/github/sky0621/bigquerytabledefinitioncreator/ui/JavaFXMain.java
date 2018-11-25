@@ -1,6 +1,6 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.ui;
 
-import com.github.sky0621.bigquerytabledefinitioncreator.config.ConfigGenVm;
+import com.github.sky0621.bigquerytabledefinitioncreator.config.tabledefclz.ConfigGenTableDefClz;
 import com.github.sky0621.bigquerytabledefinitioncreator.config.ConfigManager;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import com.github.sky0621.bigquerytabledefinitioncreator.Executor;
 
-import static com.github.sky0621.bigquerytabledefinitioncreator.ExecMode.GEN_VM;
+import static com.github.sky0621.bigquerytabledefinitioncreator.ExecMode.GEN_TABLE_DEF_CLASS;
 
 /**
  * FIXME: JavaDoc
@@ -37,27 +37,27 @@ public class JavaFXMain extends Application {
         explain.setText("指定のフォーマットで書かれたExcelファイルが置かれたディレクトリと生成物の出力先を指定してください。初期状態では sample ディレクトリ配下を指定しています。");
 
         ConfigManager.init();
-        ConfigGenVm configGenVm = ConfigManager.configGenVm();
+        ConfigGenTableDefClz configGenTableDefClz = ConfigManager.configGenTableDefClz();
 
         Label inputDirExplain = new Label();
         inputDirExplain.setText("Excelファイル格納ルートディレクトリをフルパスで入力：");
 
         inputDirTField = new TextField();
-        inputDirTField.setText(configGenVm.getInputDir());
+        inputDirTField.setText(configGenTableDefClz.getIo().getInputParameter());
 
         Label outputDirExplain = new Label();
         outputDirExplain.setText("出力ファイル格納ディレクトリをフルパスで入力：");
 
         outputDirTField = new TextField();
-        outputDirTField.setText(configGenVm.getOutputDir());
+        outputDirTField.setText(configGenTableDefClz.getIo().getOutputDir());
 
         Button parseBtn = new Button();
         parseBtn.setText("生成");
         parseBtn.setOnAction(actionEvent -> {
             try {
-                configGenVm.setInputDir(inputDirTField.getText());
-                configGenVm.setOutputDir(outputDirTField.getText());
-                new Executor().run(GEN_VM);
+                configGenTableDefClz.getIo().setInputParameter(inputDirTField.getText());
+                configGenTableDefClz.getIo().setOutputDir(outputDirTField.getText());
+                new Executor().run(GEN_TABLE_DEF_CLASS);
                 resultLabel.setText("生成終了！");   // TODO 即レス？
             } catch (Throwable t) {
                 t.printStackTrace();

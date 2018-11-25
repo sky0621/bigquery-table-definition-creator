@@ -1,6 +1,6 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.parser.excel.element;
 
-import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplate;
+import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplateParameter;
 import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element.IfVelocityTemplateElement;
 
 /**
@@ -9,17 +9,17 @@ import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element
 public class CellParser {
 
     // 副作用。。。
-    private VelocityTemplate velocityTemplate;
+    private VelocityTemplateParameter velocityTemplateParameter;
 
-    public CellParser(VelocityTemplate velocityTemplate) {
-        this.velocityTemplate = velocityTemplate;
+    public CellParser(VelocityTemplateParameter velocityTemplateParameter) {
+        this.velocityTemplateParameter = velocityTemplateParameter;
     }
 
     public boolean parse(IfVelocityTemplateElement element) {
 
         // TODO 例外スロー？
 
-        element.doProcess(velocityTemplate);
+        element.doProcess(velocityTemplateParameter);
         return true;
     }
 

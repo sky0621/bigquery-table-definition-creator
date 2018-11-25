@@ -1,6 +1,6 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.parser.excel.element;
 
-import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplate;
+import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplateParameter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
@@ -13,9 +13,9 @@ import java.util.Optional;
  */
 public class WorkbookParser {
 
-    public List<Optional<VelocityTemplate>> parse(Workbook workbook) {
+    public List<Optional<VelocityTemplateParameter>> parse(Workbook workbook) {
 
-        List<Optional<VelocityTemplate>> velocityTemplateList = new ArrayList<>();
+        List<Optional<VelocityTemplateParameter>> velocityTemplateList = new ArrayList<>();
         for (Sheet sheet : workbook) {
             velocityTemplateList.add(new SheetParser().parse(sheet));
         }
