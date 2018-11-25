@@ -1,6 +1,6 @@
 # 入出力
-inputDir: "sample/input"
-outputDir: "mail/template"
+inputDir: "/work/src/java/github.com/sky0621/bigquery-table-definition-creator/bigquery-table-definition-creator/sample/input"
+outputDir: "/work/src/java/github.com/sky0621/bigquery-table-definition-creator/bigquery-table-definition-creator/mail/template"
 # 行インデックス
 lineIdx_templateFileName: 1
 lineIdx_sampleMail: 4

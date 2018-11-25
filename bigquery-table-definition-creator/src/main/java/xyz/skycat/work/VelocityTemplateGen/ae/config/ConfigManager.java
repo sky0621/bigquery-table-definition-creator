@@ -17,7 +17,7 @@ public class ConfigManager {
 
         if (configGenVm == null) {
             try {
-                configGenVm = new Yaml().loadAs(new FileReader("config_genvm.yaml"), ConfigGenVm.class);
+                configGenVm = new Yaml().loadAs(new FileReader(System.getProperty("user.dir") + "/sky0621/bigquery-table-definition-creator/bigquery-table-definition-creator/config_genvm.yaml"), ConfigGenVm.class);
             } catch (FileNotFoundException e) {
                 // TODO Logger使用
                 throw new VelocityTemplateGenException(e);
