@@ -3,6 +3,7 @@ package com.github.sky0621.bigquerytabledefinitioncreator.construct.excel;
 import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element.SampleMail;
 import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element.DisplaySpecification;
 import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element.SeparateOutSpecification;
+import lombok.Data;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import static com.github.sky0621.bigquerytabledefinitioncreator.config.ConfigMan
 /**
  * FIXME: JavaDoc
  */
+@Data
 public class VelocityTemplate {
 
     private String templateFileName;
@@ -46,55 +48,4 @@ public class VelocityTemplate {
         return configGenVm().getOutputDir() + parts + File.separator + templateFileName + configGenVm().getOutputFileSuffix();
     }
 
-    public void setTemplateFileName(String templateFileName) {
-        this.templateFileName = templateFileName;
-    }
-
-    public String getTemplateFileType() {
-        return templateFileType;
-    }
-
-    public void setTemplateFileType(String templateFileType) {
-        this.templateFileType = templateFileType;
-    }
-
-    public String getTemplateFileComment() {
-        return templateFileComment;
-    }
-
-    public void setTemplateFileComment(String templateFileComment) {
-        this.templateFileComment = templateFileComment;
-    }
-
-    public String getTemplateSetString() {
-        return templateSetString;
-    }
-
-    public void setTemplateSetString(String templateSetString) {
-        this.templateSetString = templateSetString;
-    }
-
-    public List<SampleMail> getSampleMailList() {
-        return sampleMailList;
-    }
-
-    public void setSampleMailList(List<SampleMail> sampleMailList) {
-        this.sampleMailList = sampleMailList;
-    }
-
-    public List<DisplaySpecification> getDisplaySpecificationList() {
-        return displaySpecificationList;
-    }
-
-    public void setDisplaySpecificationList(List<DisplaySpecification> displaySpecificationList) {
-        this.displaySpecificationList = displaySpecificationList;
-    }
-
-    public List<SeparateOutSpecification> getSeparateOutSpecificationList() {
-        return separateOutSpecificationList;
-    }
-
-    public void setSeparateOutSpecificationList(List<SeparateOutSpecification> separateOutSpecificationList) {
-        this.separateOutSpecificationList = separateOutSpecificationList;
-    }
 }

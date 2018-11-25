@@ -1,6 +1,7 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element;
 
 import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplate;
+import lombok.Data;
 import org.apache.poi.ss.usermodel.Cell;
 import com.github.sky0621.bigquerytabledefinitioncreator.gen.vm.SeparateOutSpecificationConvertMethod;
 import com.github.sky0621.bigquerytabledefinitioncreator.util.PoiUtil;
@@ -12,6 +13,7 @@ import static com.github.sky0621.bigquerytabledefinitioncreator.gen.vm.expressio
 /**
  * FIXME: JavaDoc
  */
+@Data
 public class SeparateOutSpecification implements IfVelocityTemplateElement {
 
     private static boolean separateOutSpecificationParseOn = false;
@@ -107,62 +109,6 @@ public class SeparateOutSpecification implements IfVelocityTemplateElement {
 
     public static void setSeparateOutSpecificationParseOn(boolean separateOutSpecificationParseOn) {
         SeparateOutSpecification.separateOutSpecificationParseOn = separateOutSpecificationParseOn;
-    }
-
-    public int[] getNos() {
-        return nos;
-    }
-
-    public void setNos(int[] nos) {
-        this.nos = nos;
-    }
-
-    public int getNo() {
-        return no;
-    }
-
-    public void setNo(int no) {
-        this.no = no;
-    }
-
-    public String getExplain() {
-        return explain;
-    }
-
-    public void setExplain(String explain) {
-        this.explain = explain;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
-    public String getSystemConvertStrTarget() {
-        return systemConvertStrTarget;
-    }
-
-    public void setSystemConvertStrTarget(String systemConvertStrTarget) {
-        this.systemConvertStrTarget = systemConvertStrTarget;
-    }
-
-    public String getSystemExpression() {
-        return systemExpression;
-    }
-
-    public void setSystemExpression(String systemExpression) {
-        this.systemExpression = systemExpression;
-    }
-
-    public SeparateOutSpecificationConvertMethod getConvertMethod() {
-        return convertMethod;
-    }
-
-    public void setConvertMethod(SeparateOutSpecificationConvertMethod convertMethod) {
-        this.convertMethod = convertMethod;
     }
 
     private void expand() {

@@ -1,6 +1,7 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element;
 
 import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplate;
+import lombok.Data;
 import org.apache.poi.ss.usermodel.Cell;
 import com.github.sky0621.bigquerytabledefinitioncreator.util.PoiUtil;
 
@@ -11,6 +12,7 @@ import static com.github.sky0621.bigquerytabledefinitioncreator.gen.vm.expressio
 /**
  * FIXME: JavaDoc
  */
+@Data
 public class DisplaySpecification implements IfVelocityTemplateElement {
 
     private static boolean displaySpecificationParseOn = false;
@@ -92,60 +94,8 @@ public class DisplaySpecification implements IfVelocityTemplateElement {
         }
     }
 
-    public static boolean isDisplaySpecificationParseOn() {
-        return displaySpecificationParseOn;
-    }
-
     public static void setDisplaySpecificationParseOn(boolean displaySpecificationParseOn) {
         DisplaySpecification.displaySpecificationParseOn = displaySpecificationParseOn;
-    }
-
-    public int getNo() {
-        return no;
-    }
-
-    public void setNo(int no) {
-        this.no = no;
-    }
-
-    public int[] getNos() {
-        return nos;
-    }
-
-    public void setNos(int[] nos) {
-        this.nos = nos;
-    }
-
-    public String getExplain() {
-        return explain;
-    }
-
-    public void setExplain(String explain) {
-        this.explain = explain;
-    }
-
-    public String getTargetStr() {
-        return targetStr;
-    }
-
-    public void setTargetStr(String targetStr) {
-        this.targetStr = targetStr;
-    }
-
-    public String getConvertStr() {
-        return convertStr;
-    }
-
-    public void setConvertStr(String convertStr) {
-        this.convertStr = convertStr;
-    }
-
-    public String getConvertType() {
-        return convertType;
-    }
-
-    public void setConvertType(String convertType) {
-        this.convertType = convertType;
     }
 
     private void expand() {

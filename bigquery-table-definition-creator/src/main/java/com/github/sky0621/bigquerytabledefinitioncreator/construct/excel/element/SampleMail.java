@@ -1,5 +1,6 @@
 package com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element;
 
+import lombok.Setter;
 import org.apache.poi.ss.usermodel.Cell;
 import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.VelocityTemplate;
 import com.github.sky0621.bigquerytabledefinitioncreator.util.PoiUtil;
@@ -7,6 +8,7 @@ import com.github.sky0621.bigquerytabledefinitioncreator.util.PoiUtil;
 /**
  * FIXME: JavaDoc
  */
+@Setter
 public class SampleMail implements IfVelocityTemplateElement {
 
     private Cell noCell;
@@ -78,14 +80,6 @@ public class SampleMail implements IfVelocityTemplateElement {
             return true;
         }
         return false;
-    }
-
-    public void setNo(int no) {
-        this.no = no;
-    }
-
-    public void setExample(String example) {
-        this.example = example;
     }
 
     private void expand() {

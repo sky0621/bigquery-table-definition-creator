@@ -7,6 +7,7 @@ import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element
 import com.github.sky0621.bigquerytabledefinitioncreator.construct.excel.element.SeparateOutSpecification;
 import com.github.sky0621.bigquerytabledefinitioncreator.gen.vm.expression.VarExpression;
 import com.github.sky0621.bigquerytabledefinitioncreator.util.VarUtil;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ import static java.util.Comparator.reverseOrder;
 /**
  * FIXME: JavaDoc
  */
+@Data
 public class SampleMailConverter {
 
     private List<SampleMail> sampleMailList;
@@ -181,30 +183,6 @@ public class SampleMailConverter {
             }
         }
         return true;
-    }
-
-    public List<SampleMail> getSampleMailList() {
-        return sampleMailList;
-    }
-
-    public void setSampleMailList(List<SampleMail> sampleMailList) {
-        this.sampleMailList = sampleMailList;
-    }
-
-    public List<DisplaySpecification> getDisplaySpecificationList() {
-        return displaySpecificationList;
-    }
-
-    public void setDisplaySpecificationList(List<DisplaySpecification> displaySpecificationList) {
-        this.displaySpecificationList = displaySpecificationList;
-    }
-
-    public List<SeparateOutSpecification> getSeparateOutSpecificationList() {
-        return separateOutSpecificationList;
-    }
-
-    public void setSeparateOutSpecificationList(List<SeparateOutSpecification> separateOutSpecificationList) {
-        this.separateOutSpecificationList = separateOutSpecificationList;
     }
 
     private String replaceByConvertStr(String example, String convertFrom, String convertTo, String templateFileType) {
